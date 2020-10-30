@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 3) do
   end
 
   create_table "reviews", force: :cascade do |t|
-    t.text "text"
+    t.string "text"
     t.integer "user_id"
     t.integer "brewery_id"
     t.datetime "created_at", precision: 6, null: false
