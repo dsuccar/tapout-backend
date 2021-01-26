@@ -51,8 +51,8 @@ breweries = result.each do |brew|
 end
 
 
-u1= User.create(username: "Danny")
-u2= User.create(username: "Kanye")
+u1= User.create(username: "Danny", password: "123")
+u2= User.create(username: "Kanye", password: "123")
 
 r1 = Review.create(user_id: u1.id, brewery_id: Brewery.first.id, text:"Came for the chicken tenders, stayed for the grass clippings")
 r2 = Review.create(user_id: u2.id, brewery_id: Brewery.second.id, text: "Ima let you finish, but first ima say that this is the best beer in the whole world")
