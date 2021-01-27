@@ -10,11 +10,12 @@ class ReviewsController < ApplicationController
   end
 
   def update
-    
     review = Review.find(params[:id])
-    byebug
-    review.update(text: params['text'] ) 
+    review.update(text: params['text'])
+    review.save
+    render json: review
   end
   
 
 end
+
