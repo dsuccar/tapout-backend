@@ -12,10 +12,19 @@ class ReviewsController < ApplicationController
   def update
     review = Review.find(params[:id])
     review.update(text: params['text'])
-    review.save
-    render json: review
+    render json: review.to_json
+
   end
   
+  def create
+    review = Review.create(text: params["text"],user_id: params["user_id"], brewery_id: params["brewery_id"])
+    render json: review.to_json 
+  end
+
+  def destroy
+    review = Review.find(params[:id])
+    review.destroy
+  end
 
 end
 
